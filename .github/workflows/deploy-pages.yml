@@ -26,7 +26,7 @@ jobs:
           apt-get update
 
       - name: Build Shinylive app
-        run: Rscript -e "source('https://gist.githubusercontent.com/emaigne/d639efd66059755a1dea20c8f8ab7653/raw/30156b3cb85623152acee231d852faf352dde392/build_shinylive.R'); build_app(app_dir = '.')"
+        run: Rscript -e "source('https://gist.githubusercontent.com/emaigne/d639efd66059755a1dea20c8f8ab7653/raw/30156b3cb85623152acee231d852faf352dde392/build_shinylive.R'); build_app(app_dir = '.', bioc=NULL)"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
