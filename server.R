@@ -3,7 +3,7 @@ server <- function(input, output) {
   
   output$distPlot <- renderPlot({
     # generate bins based on input$bins from ui.R
-    p <- ggplot(mtcars, aes(input$var1, input$var2))
+    p <- ggplot(mtcars, aes(.data[[input$var1]], .data[[input$var2]]))
     p + geom_point()
   })
 }

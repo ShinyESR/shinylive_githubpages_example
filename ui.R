@@ -7,8 +7,8 @@ ui <- fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput("var1", label = "Variable 1", choices = colvars),
-      selectInput("var2", label = "Variable 2", choices = colvars)
+      selectInput("var1", label = "Variable 1", choices = colvars, selected = colvars[1]),
+      selectInput("var2", label = "Variable 2", choices = colvars, selected = colvars[2])
     ),
     
     # Show a plot of the generated distribution
