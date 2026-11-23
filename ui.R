@@ -1,15 +1,19 @@
+# Define UI for application that draws a histogram
 ui <- fluidPage(
-  titlePanel("Carte dynamique de la France"),
+  
+  # Application title
+  titlePanel("Test de mon appli en shinylive"),
+  
+  # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput("var", "Indicateur",
-                  choices = c("Indicateur A" = "indicateur_a",
-                              "Indicateur B" = "indicateur_b")),
-      sliderInput("opacite", "Opacité", min = 0.1, max = 1, value = 0.7, step = 0.1),
-      hr()
+      selectInput("var1", label = "Variable 1", choices = colvars),
+      selectInput("var2", label = "Variable 2", choices = colvars)
     ),
+    
+    # Show a plot of the generated distribution
     mainPanel(
-      leafletOutput("carte", height = "650px")
+      plotOutput("distPlot")
     )
   )
 )
